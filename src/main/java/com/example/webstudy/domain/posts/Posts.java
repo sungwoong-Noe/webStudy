@@ -1,15 +1,16 @@
 package com.example.webstudy.domain.posts;
 
+import com.example.webstudy.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Entity
 @NoArgsConstructor
 @Getter
-public class Posts {
+@Entity
+public class Posts extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,6 +31,7 @@ public class Posts {
         this.author = author;
     }
 
+    //수정
     public void update(String title, String content) {
         this.title = title;
         this.content = content;

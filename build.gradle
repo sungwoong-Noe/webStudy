@@ -25,7 +25,8 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation group: 'com.h2database', name: 'h2', version: '2.1.210'
+	implementation 'mysql:mysql-connector-java'
+
 
 }
 
