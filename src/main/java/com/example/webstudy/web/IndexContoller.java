@@ -12,4 +12,14 @@ public class IndexContoller {
     public String index(){
         return "index";
     }
+
+    @GetMapping("/thymeleaf")
+    public String thymelead(){
+        return "layout/config";
+    }
+
+    @GetMapping("/posts/save")
+    public String postsSave(){
+        return "posts-save";
+    }
 }

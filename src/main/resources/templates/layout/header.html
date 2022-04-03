@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html xmlns:th="http://www.thymeleaf.org">
 
-</body>
-</html>
+<head th:fragment="head(title)">
+    <meta charset="UTF-8">
+    <title th:replace="${title}">스프링부트 웹사이트</title>
+    <link rel="stylesheet" th:href="@{/maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css}">
+</head>
+
+
+<head th:fragment="springboot(title)">
+    <meta charset="UTF-8">
+    <title th:replace="${title}"></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+</head>

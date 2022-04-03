@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="config(title,section)">
+
+<head th:replace="layout/header :: springboot(${title})">
+</head>
+
+<body>
+    <section th:replace="${section}">
+    </section>
+<footer th:replace="layout/footer :: script"></footer>
+
+</body>
+</html>
