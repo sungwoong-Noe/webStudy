@@ -25,7 +25,10 @@
             </thead>
             <tbody id="tbody">
                 <tr th:each="list : ${posts}">
-                    <td></td>
+                    <td th:text="${list.getId()}"></td>
+                    <td th:text="${list.getTitle()}"></td>
+                    <td th:text="${list.getAuthor()}"></td>
+                    <td th:text="${list.getModifiedDate()}"></td>
                 </tr>
             </tbody>
         </table>

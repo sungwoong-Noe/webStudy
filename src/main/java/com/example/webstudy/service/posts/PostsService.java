@@ -2,6 +2,7 @@ package com.example.webstudy.service.posts;
 
 import com.example.webstudy.domain.posts.Posts;
 import com.example.webstudy.domain.posts.PostsRepository;
+import com.example.webstudy.web.dto.PostsListResponseDto;
 import com.example.webstudy.web.dto.PostsResponseDto;
 import com.example.webstudy.web.dto.PostsSaveRequestDto;
 import com.example.webstudy.web.dto.PostsUpdateRequestDto;
@@ -9,7 +10,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
@@ -41,4 +44,13 @@ public class PostsService {
 
         return id;
     }
+
+
+    //전체 게시글 조회
+    public List<PostsListResponseDto> findAllDesc(){
+        return postsRepository.findAllDecs().stream()
+                .map(PostsListResponseDto::new)
+                .collect(Collectors.toList());
+    }
+
 }
