@@ -1,5 +1,7 @@
 package com.example.webstudy.web;
 
+import com.example.webstudy.config.auth.LoginUser;
+import com.example.webstudy.config.auth.dto.SessionUser;
 import com.example.webstudy.service.posts.PostsService;
 import com.example.webstudy.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
@@ -15,8 +17,13 @@ public class IndexContoller {
     private final PostsService postsService;
 
     @GetMapping("/")
-    public String index(Model model){
+    public String index(Model model, @LoginUser SessionUser user){
+
         model.addAttribute("posts", postsService.findAllDesc());
+        if(user != null){
+            model.addAttribute("userName", user.getName());
+        }
+
         return "index";
     }
 
