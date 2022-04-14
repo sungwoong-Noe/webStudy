@@ -9,9 +9,10 @@
             <div class="col-md-6">
                 <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
                 <span   th:if="${userName != null}"id="user" th:text="'Logined in as ' + ${userName}"></span>
-                <a th:if="${session.user != null}" href="/logout" class="btn btn-info active" role="button">Logout</a>
+                <a th:if="${userName != null}" href="/logout" class="btn btn-info active" role="button">Logout</a>
 
-                <a th:if="${session.user == null}" href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
+                <a th:if="${userName == null}" href="/oauth2/authorization/google" class="btn btn-secondary active" role="button">Google Login</a>
+                <a th:if="${userName == null}" href="/oauth2/authorization/naver" class="btn btn-success active" role="button">Naver Login</a>
             </div>
         </div>
         <br>
