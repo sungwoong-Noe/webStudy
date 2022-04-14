@@ -22,11 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static  org.hamcrest.Matchers.is;
 
 @ExtendWith(SpringExtension.class)
-@WebMvcTest(controllers = HelloController.class, // @Controller만 읽는다.
-        excludeFilters = {
-                @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = SecurityConfig.class)
-        }
-    )
+@WebMvcTest(controllers = HelloController.class, excludeFilters = {@ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = SecurityConfig.class)})
 class HelloControllerTest {
 
 
